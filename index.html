@@ -58,3 +58,14 @@ a[href^="mailto:"]::after {
 </ul>
 <p>本域名至少维护至2029/4/30。如果你希望某服务可以维护更长时间，欢迎捐赠。</p>
 <script defer src="https://status.genouka.top/script.js" data-website-id="f70f8550-d8c8-4cf1-8d65-14bf39a808b2"></script>
+<script type="text/javascript">
+  (() => {
+    const name = 'outbound-link-click';
+    document.querySelectorAll('a').forEach(a => {
+      if (a.host !== window.location.host && !a.getAttribute('data-umami-event')) {
+        a.setAttribute('data-umami-event', name);
+        a.setAttribute('data-umami-event-url', a.href);
+      }
+    });
+  })();
+</script>
