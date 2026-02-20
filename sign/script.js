@@ -89,7 +89,7 @@ async function verityApk() {
         })
 
         var vinfo = ""
-        var besafe = false
+        var besafe = 0
         try {
             const zip = await loadZip(apkFile);
             const signature = await getSignature(zip);
@@ -100,16 +100,16 @@ async function verityApk() {
             
             if(sha256 == "3157f8b209a9664ca079951bf85f638464189fbae9ccf325f63cc6de64295638"){
                 vinfo += "* 该应用的签名是 秋冥散雨_Genuka、沐白_official、C-G_O_A_T 共用的3157签名。\n"
-                besafe = true;
+                besafe = 100;
             }else if(sha256 == "9cea93b97cabb4d6f8a8acc98e0b24636084c552dd775c7690435bb983be62bc"){
                 vinfo += "* 该应用的签名是 秋冥散雨_Genuka 独用的9cea签名。\n"
-                besafe = true;
+                besafe = 100;
             }else if(sha256 == "063c6549bf3556e6dbecd6e1b185f2e7c6b630cb10db097a71c3095e3b6b06cb"){
                 vinfo += "* 该应用的签名是 秋冥散雨_Genuka 独用的063c签名。\n"
-                besafe = true;
+                besafe = 100;
             }else if(sha256 == "a40da80a59d170caa950cf15c18c454d47a39b26989d8b640ecd745ba71bf5dc"){
-                vinfo += "* 该应用的签名是 秋冥散雨_Genuka、沐白_official、C-G_O_A_T 共用的a40d签名。\n"
-                besafe = true;
+                vinfo += "* 该应用的签名是 秋冥散雨_Genuka、沐白_official、C-G_O_A_T、表极客开发团队 共用的a40d签名。\n"
+                besafe = 50;
             }else if(sha256 == "e26f03e6caed1e114fd521d4babbe670a167a24c8691822d794e076c691a1d76"){
                 vinfo += "* 该应用的签名是公用的e26f测试签名。\n"
             }else if(sha256 == "a40da80a59d170caa950cf15c18c454d47a39b26989d8b640ecd745ba71bf5dc"){
@@ -130,9 +130,12 @@ async function verityApk() {
         }
         document.getElementById("org-sig").innerText = vinfo
 
-        if(besafe){
+        if(besafe >= 100){
             document.getElementById("consult-info").innerText = "该应用安装包签名正常。"
             document.getElementById("consult-info").style = "color:green"
+        }else if(besafe >= 50){
+            document.getElementById("consult-info").innerText = "该应用安装包签名置信度低。"
+            document.getElementById("consult-info").style = "color:yellow"
         }else{
             document.getElementById("consult-info").innerText = "该应用的来源安全性存疑。"
             document.getElementById("consult-info").style = "color:red"
@@ -236,4 +239,4 @@ function encodeToBase64(decodedBytes) {
     }
     return window.btoa(binary);
 }
-window.dataversion.innerText="V20260220-1b"
+window.dataversion.innerText="V20260220-1c"
