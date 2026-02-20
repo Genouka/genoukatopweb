@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <style>
+    body {
+    background-color: #eeeeee;
+    color: #000000;
+    }
+    a {
+        white-space: nowrap;
+        color: sienna;
+    }
+    @media (prefers-color-scheme: dark) {
+    body {
+    background-color: #222222;
+    color: #dddddd;
+    }
+    a {
+        color: pink;
+    }
+    }
+    </style>
+    <title>秋冥正版软件验证服务</title>
+    <script src="jszip.min.js"></script>
+    <script src="forge.min.js"></script>
+    <script src="app-info-parser.js"></script>
+    <script defer src="https://status.genouka.top/script.js" data-website-id="f70f8550-d8c8-4cf1-8d65-14bf39a808b2"></script>
+</head>
+<body>
+<h1>秋冥正版软件验证服务</h1>
+<p>本网站目前是实验性的，可能存在误报，请谨慎对待验证结果。目前仅支持apk格式安装包。</p>
+<div>选择apk文件：<input type="file" id="apkFile" />
+<button onclick="verityApk()">验证</button>
+<hr>
+</div>
+<h3>验证结果</h3>
+<img id="result-icon" style="width: 64px;height: 64px;">
+<p id="result-app-info"></p>
+<p id="verity-info"></p>
+<p id="org-sig"></p>
+<p id="sig"></p>
+<p id="consult-info" style="color:cyan"></p>
+<hr>
+<p>数据库版本:<span id="dataversion">加载中...</span><br>Copyright © 2026 秋冥散雨_GenOuka All Rights Reserved</p>
+<script src="script.js"></script>
+</body>
+</html>
