@@ -108,7 +108,7 @@ async function verityApk() {
                 vinfo += "* 该应用的签名是 秋冥散雨_Genuka 独用的063c签名。\n"
                 besafe = true;
             }else if(sha256 == "a40da80a59d170caa950cf15c18c454d47a39b26989d8b640ecd745ba71bf5dc"){
-                vinfo += "* 该应用的签名是 C-G_O_A_T 独用的a40d签名。\n"
+                vinfo += "* 该应用的签名是 秋冥散雨_Genuka、沐白_official、C-G_O_A_T 共用的a40d签名。\n"
                 besafe = true;
             }else if(sha256 == "e26f03e6caed1e114fd521d4babbe670a167a24c8691822d794e076c691a1d76"){
                 vinfo += "* 该应用的签名是公用的e26f测试签名。\n"
@@ -236,4 +236,4 @@ function encodeToBase64(decodedBytes) {
     }
     return window.btoa(binary);
 }
-window.dataversion.innerText="V20260220-1a"
+window.dataversion.innerText="V20260220-1b"
